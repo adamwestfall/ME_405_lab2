@@ -66,9 +66,9 @@ if __name__ == '__main__':
     try:
         while True:
             
-            
-            Kp = input('Set Kp value:')
-            setpoint = input('Set setpoint value:')
+            encoder_A.zero()
+            Kp = float(input('Set Kp value:'))
+            setpoint = int(input('Set setpoint value:'))
             
             control_loop.set_Kp(Kp)
             
@@ -84,17 +84,19 @@ if __name__ == '__main__':
                 #get position from encoder object
                 encoder_A.update()
                 current_pos = encoder_A.read()
-                
+                position.append(current_pos)
+                time.append(utime.ticks_ms())
                 pwm = control_loop.run(current_pos)
-
                 m1.set_duty(pwm)
                 
                 #get time from utime.time()
-                time.append(utime.ticks_ms())
+                
             
                 utime.sleep_ms(10)
                 
             #print the output of time and position
+            print(time)
+            print(position)
             
         
     except KeyboardInterrupt:
