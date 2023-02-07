@@ -5,8 +5,9 @@ from matplotlib import pyplot as p
 def plotResponse(out: list):
     pass
 
-def initTestOne(s, ):
-    s.writeToVCP()
+def initTest(s, k, pos):
+    line = str(k) + "," + str(pos)
+    s.writeToVCP(line)
 
 if __name__ == '__main__':
     s = serialManager.SerialManager('COM4', 115200)

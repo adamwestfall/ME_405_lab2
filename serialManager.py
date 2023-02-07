@@ -20,9 +20,10 @@ class SerialManager:
     
     # write to the serial to perform step responses with the controller
     # - writing a consistent setpoint for the controller
-    def writeToVCP(self, input):
+    def writeToVCP(self, line):
         with s.Serial(self.comport, self.baudrate) as s_port:
-            s_port.write()
+            # t = bytes(line)
+            s_port.write(b"test")
 
     def readFromVCP(self):
         with s.Serial(self.comport,self.baudrate) as s_port:
