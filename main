@@ -1,0 +1,15 @@
+import pyb
+
+if __name__ == '__main__':
+
+    try:
+        ser = pyb.USB_VCP()
+
+        while(not ser.any()):
+            pass
+
+        charIn = ser.readline()
+        print(charIn)
+
+    except KeyboardInterrupt:
+        print('leaving')
