@@ -1,0 +1,169 @@
+\hypertarget{namespacemain}{}\doxysection{main Namespace Reference}
+\label{namespacemain}\index{main@{main}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemain_ae3a76167a54fa89b797d86593fbfab3d}{write\+To}} (external, test\+\_\+results)
+\begin{DoxyCompactList}\small\item\em Write\+To function for writing test results. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacemain_a889d8c8711b0bf7d92e1b07e82f25ac3}{read\+From}} (external)
+\begin{DoxyCompactList}\small\item\em Read data from serial connection. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacemain_a5a2239486f476f90204c51d83b479f47}{initialize\+UART}} ()
+\begin{DoxyCompactList}\small\item\em Initializes UART. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacemain_a7dbd907bb50870349865a791deb19164}{initialize\+Hardware}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the motor, encoder, and closed loop controller. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacemain_a89686e6ab56800aa8bd5b5497d3c188c}{run\+Controller\+Test}} (gain, setpoint, enc, driver, motor, controller, test\+Num)
+\begin{DoxyCompactList}\small\item\em Tests the controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacemain_ab57e94a4b7927f12feadfb9dee28d68c}\label{namespacemain_ab57e94a4b7927f12feadfb9dee28d68c}} 
+def {\bfseries hardware} = \mbox{\hyperlink{namespacemain_a7dbd907bb50870349865a791deb19164}{initialize\+Hardware}}()
+\item 
+\mbox{\Hypertarget{namespacemain_ad57278ee76692c944504663c050722be}\label{namespacemain_ad57278ee76692c944504663c050722be}} 
+def {\bfseries encoder} = hardware\mbox{[}0\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacemain_a788e334a5b003bc6e0d147ca2680174c}\label{namespacemain_a788e334a5b003bc6e0d147ca2680174c}} 
+def {\bfseries driver\+\_\+m1} = hardware\mbox{[}1\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacemain_a8be44e7f0d23baad02310386beb360b3}\label{namespacemain_a8be44e7f0d23baad02310386beb360b3}} 
+def {\bfseries m1} = hardware\mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacemain_a74b3ac33cfebb091aedd6c6da9ccc6c5}\label{namespacemain_a74b3ac33cfebb091aedd6c6da9ccc6c5}} 
+def {\bfseries controller} = hardware\mbox{[}3\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacemain_a405717f157223bcfee6c9d5ccaa0e9b9}\label{namespacemain_a405717f157223bcfee6c9d5ccaa0e9b9}} 
+bool {\bfseries msg\+Visible} = False
+\item 
+\mbox{\Hypertarget{namespacemain_a93bac152c1df51513d4dbfa5560233e9}\label{namespacemain_a93bac152c1df51513d4dbfa5560233e9}} 
+int {\bfseries test\+Counter} = 0
+\item 
+\mbox{\Hypertarget{namespacemain_a129bda823cbb62ffb698427de27e0d56}\label{namespacemain_a129bda823cbb62ffb698427de27e0d56}} 
+{\bfseries try} \+:
+\item 
+\mbox{\Hypertarget{namespacemain_a8cde02d84a00aa153200e027946e5688}\label{namespacemain_a8cde02d84a00aa153200e027946e5688}} 
+def {\bfseries external} = \mbox{\hyperlink{namespacemain_a5a2239486f476f90204c51d83b479f47}{initialize\+UART}}()
+\item 
+\mbox{\Hypertarget{namespacemain_ada24c0f5d143f130aceaf05ae35895fd}\label{namespacemain_ada24c0f5d143f130aceaf05ae35895fd}} 
+{\bfseries end}
+\item 
+\mbox{\Hypertarget{namespacemain_a5503fb296f0db628706101b01d611384}\label{namespacemain_a5503fb296f0db628706101b01d611384}} 
+def {\bfseries test\+\_\+params} = \mbox{\hyperlink{namespacemain_a889d8c8711b0bf7d92e1b07e82f25ac3}{read\+From}}(external)
+\item 
+\mbox{\Hypertarget{namespacemain_ad8aa92b2d4d76972c8b08e0ad7618090}\label{namespacemain_ad8aa92b2d4d76972c8b08e0ad7618090}} 
+def {\bfseries gain} = test\+\_\+params\mbox{[}0\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacemain_abaace288e7aa75cceb6af1bc85cb85a3}\label{namespacemain_abaace288e7aa75cceb6af1bc85cb85a3}} 
+def {\bfseries setpoint} = test\+\_\+params\mbox{[}1\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacemain_aee001a74edfb88119a1d4ad6a3282645}\label{namespacemain_aee001a74edfb88119a1d4ad6a3282645}} 
+def {\bfseries test\+\_\+results} = \mbox{\hyperlink{namespacemain_a89686e6ab56800aa8bd5b5497d3c188c}{run\+Controller\+Test}}(gain, setpoint, encoder, driver\+\_\+m1, m1, controller, test\+Counter)
+\item 
+\mbox{\Hypertarget{namespacemain_aef90aa5d9f981abe8801c5f9c508e000}\label{namespacemain_aef90aa5d9f981abe8801c5f9c508e000}} 
+{\bfseries else} \+:
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}   @file                            main.py
+   @brief                              Main function to run a closed loop motor controller.
+   @details                            Requires the motor_driver, encoder, closed_loop_controller, serialManager, and lab2_pc files 
+                                       to properly apply closed loop control on DC motors. This file contains writeTo, readFrom, initializeUART
+                                       initializeHardware, and runControllerTest functions.                                       
+   @author                             Jason Davis
+   @author                             Conor Fraser
+   @author                             Adam Westfall
+   @copyright                          Creative Commons CC BY: Please visit https://creativecommons.org/licenses/by/4.0/ to learn more
+   @date                               January 9, 2023
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacemain_a7dbd907bb50870349865a791deb19164}\label{namespacemain_a7dbd907bb50870349865a791deb19164}} 
+\index{main@{main}!initializeHardware@{initializeHardware}}
+\index{initializeHardware@{initializeHardware}!main@{main}}
+\doxysubsubsection{\texorpdfstring{initializeHardware()}{initializeHardware()}}
+{\footnotesize\ttfamily def main.\+initialize\+Hardware (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the motor, encoder, and closed loop controller. 
+
+Motor, encoder, and controller objects are created. \begin{DoxyReturn}{Returns}
+Returns a list of the necessary hardware objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemain_a5a2239486f476f90204c51d83b479f47}\label{namespacemain_a5a2239486f476f90204c51d83b479f47}} 
+\index{main@{main}!initializeUART@{initializeUART}}
+\index{initializeUART@{initializeUART}!main@{main}}
+\doxysubsubsection{\texorpdfstring{initializeUART()}{initializeUART()}}
+{\footnotesize\ttfamily def main.\+initialize\+UART (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes UART. 
+
+Initializes UART connection. BAUDRATE is set to 115200. \begin{DoxyReturn}{Returns}
+Returns the initialized UART object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemain_a889d8c8711b0bf7d92e1b07e82f25ac3}\label{namespacemain_a889d8c8711b0bf7d92e1b07e82f25ac3}} 
+\index{main@{main}!readFrom@{readFrom}}
+\index{readFrom@{readFrom}!main@{main}}
+\doxysubsubsection{\texorpdfstring{readFrom()}{readFrom()}}
+{\footnotesize\ttfamily def main.\+read\+From (\begin{DoxyParamCaption}\item[{}]{external }\end{DoxyParamCaption})}
+
+
+
+Read data from serial connection. 
+
+Read data from serial connection. 
+\begin{DoxyParams}{Parameters}
+{\em external} & External serial connection. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacemain_a89686e6ab56800aa8bd5b5497d3c188c}\label{namespacemain_a89686e6ab56800aa8bd5b5497d3c188c}} 
+\index{main@{main}!runControllerTest@{runControllerTest}}
+\index{runControllerTest@{runControllerTest}!main@{main}}
+\doxysubsubsection{\texorpdfstring{runControllerTest()}{runControllerTest()}}
+{\footnotesize\ttfamily def main.\+run\+Controller\+Test (\begin{DoxyParamCaption}\item[{}]{gain,  }\item[{}]{setpoint,  }\item[{}]{enc,  }\item[{}]{driver,  }\item[{}]{motor,  }\item[{}]{controller,  }\item[{}]{test\+Num }\end{DoxyParamCaption})}
+
+
+
+Tests the controller. 
+
+Tests the controller based on the Kp gain inputs from the user. Utilizes a while loop to constantly update the data. 
+\begin{DoxyParams}{Parameters}
+{\em gain} & Parses in the input gain. \\
+\hline
+{\em setpoint} & Parses in the angle setpoint for where we want the motor to stop. \\
+\hline
+{\em enc} & Parses in the encoder object. \\
+\hline
+{\em driver} & Parses in the \mbox{\hyperlink{namespacemotor__driver}{motor\+\_\+driver}} object. \\
+\hline
+{\em motor} & Parses in the motor object. \\
+\hline
+{\em controller} & Parses in the closed loop controller object. \\
+\hline
+{\em test\+Num} & Parses in the Test Counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a list of the necessary hardware objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemain_ae3a76167a54fa89b797d86593fbfab3d}\label{namespacemain_ae3a76167a54fa89b797d86593fbfab3d}} 
+\index{main@{main}!writeTo@{writeTo}}
+\index{writeTo@{writeTo}!main@{main}}
+\doxysubsubsection{\texorpdfstring{writeTo()}{writeTo()}}
+{\footnotesize\ttfamily def main.\+write\+To (\begin{DoxyParamCaption}\item[{}]{external,  }\item[{}]{test\+\_\+results }\end{DoxyParamCaption})}
+
+
+
+Write\+To function for writing test results. 
+
+Write\+To function for writing test results. Used in testing. 
+\begin{DoxyParams}{Parameters}
+{\em external} & External serial connection. \\
+\hline
+{\em test\+\_\+results} & Parses in test results. ~\newline
+ \\
+\hline
+\end{DoxyParams}

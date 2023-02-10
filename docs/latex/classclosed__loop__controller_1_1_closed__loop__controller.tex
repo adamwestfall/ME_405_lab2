@@ -1,0 +1,86 @@
+\hypertarget{classclosed__loop__controller_1_1_closed__loop__controller}{}\doxysection{closed\+\_\+loop\+\_\+controller.\+Closed\+\_\+loop\+\_\+controller Class Reference}
+\label{classclosed__loop__controller_1_1_closed__loop__controller}\index{closed\_loop\_controller.Closed\_loop\_controller@{closed\_loop\_controller.Closed\_loop\_controller}}
+
+
+Closed loop controller class.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classclosed__loop__controller_1_1_closed__loop__controller_a350777c39896ec80d8e14181e44d5702}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Initializes the closed loop controller object. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclosed__loop__controller_1_1_closed__loop__controller_ad377a97935fae3c64ef4b5ba52cfa0c1}{run}} (self, current\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Runs the proportional closed loop controller. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclosed__loop__controller_1_1_closed__loop__controller_ace8e0909ab8d799bd7074c3c8096098d}{set\+\_\+setpoint}} (self, setpoint)
+\begin{DoxyCompactList}\small\item\em Sets the setpoint for the closed loop controller. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclosed__loop__controller_1_1_closed__loop__controller_a7baed271caebd3fa8753ac59e5152072}{set\+\_\+kp}} (self, kp)
+\begin{DoxyCompactList}\small\item\em Sets the Kp for the closed loop controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classclosed__loop__controller_1_1_closed__loop__controller_a047ae20781d1e496e7164008b89edf4c}\label{classclosed__loop__controller_1_1_closed__loop__controller_a047ae20781d1e496e7164008b89edf4c}} 
+{\bfseries kp}
+\item 
+\mbox{\Hypertarget{classclosed__loop__controller_1_1_closed__loop__controller_aa47154f95fc5e801a398e9ac1962e364}\label{classclosed__loop__controller_1_1_closed__loop__controller_aa47154f95fc5e801a398e9ac1962e364}} 
+{\bfseries setpoint}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Closed loop controller class. 
+
+Contains init, run, set\+\_\+setpoint, and set\+\_\+kp functions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classclosed__loop__controller_1_1_closed__loop__controller_a350777c39896ec80d8e14181e44d5702}\label{classclosed__loop__controller_1_1_closed__loop__controller_a350777c39896ec80d8e14181e44d5702}} 
+\index{closed\_loop\_controller.Closed\_loop\_controller@{closed\_loop\_controller.Closed\_loop\_controller}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!closed\_loop\_controller.Closed\_loop\_controller@{closed\_loop\_controller.Closed\_loop\_controller}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def closed\+\_\+loop\+\_\+controller.\+Closed\+\_\+loop\+\_\+controller.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Initializes the closed loop controller object. 
+
+Kp and setpoint self variables are established. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classclosed__loop__controller_1_1_closed__loop__controller_ad377a97935fae3c64ef4b5ba52cfa0c1}\label{classclosed__loop__controller_1_1_closed__loop__controller_ad377a97935fae3c64ef4b5ba52cfa0c1}} 
+\index{closed\_loop\_controller.Closed\_loop\_controller@{closed\_loop\_controller.Closed\_loop\_controller}!run@{run}}
+\index{run@{run}!closed\_loop\_controller.Closed\_loop\_controller@{closed\_loop\_controller.Closed\_loop\_controller}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily def closed\+\_\+loop\+\_\+controller.\+Closed\+\_\+loop\+\_\+controller.\+run (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{current\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Runs the proportional closed loop controller. 
+
+Proportional controller that returns the necessary motor duty cycle. \begin{DoxyReturn}{Returns}
+Returns the duty cycle needed by the motor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classclosed__loop__controller_1_1_closed__loop__controller_a7baed271caebd3fa8753ac59e5152072}\label{classclosed__loop__controller_1_1_closed__loop__controller_a7baed271caebd3fa8753ac59e5152072}} 
+\index{closed\_loop\_controller.Closed\_loop\_controller@{closed\_loop\_controller.Closed\_loop\_controller}!set\_kp@{set\_kp}}
+\index{set\_kp@{set\_kp}!closed\_loop\_controller.Closed\_loop\_controller@{closed\_loop\_controller.Closed\_loop\_controller}}
+\doxysubsubsection{\texorpdfstring{set\_kp()}{set\_kp()}}
+{\footnotesize\ttfamily def closed\+\_\+loop\+\_\+controller.\+Closed\+\_\+loop\+\_\+controller.\+set\+\_\+kp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{kp }\end{DoxyParamCaption})}
+
+
+
+Sets the Kp for the closed loop controller. 
+
+Sets the Kp for the closed loop controller. \mbox{\Hypertarget{classclosed__loop__controller_1_1_closed__loop__controller_ace8e0909ab8d799bd7074c3c8096098d}\label{classclosed__loop__controller_1_1_closed__loop__controller_ace8e0909ab8d799bd7074c3c8096098d}} 
+\index{closed\_loop\_controller.Closed\_loop\_controller@{closed\_loop\_controller.Closed\_loop\_controller}!set\_setpoint@{set\_setpoint}}
+\index{set\_setpoint@{set\_setpoint}!closed\_loop\_controller.Closed\_loop\_controller@{closed\_loop\_controller.Closed\_loop\_controller}}
+\doxysubsubsection{\texorpdfstring{set\_setpoint()}{set\_setpoint()}}
+{\footnotesize\ttfamily def closed\+\_\+loop\+\_\+controller.\+Closed\+\_\+loop\+\_\+controller.\+set\+\_\+setpoint (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{setpoint }\end{DoxyParamCaption})}
+
+
+
+Sets the setpoint for the closed loop controller. 
+
+Sets the setpoint for the closed loop controller. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/conor/\+One\+Drive/\+Desktop/\+ME 405 Mechatronics 2/\+Github Local Repository/\+ME\+\_\+405\+\_\+lab2/src/closed\+\_\+loop\+\_\+controller.\+py\end{DoxyCompactItemize}

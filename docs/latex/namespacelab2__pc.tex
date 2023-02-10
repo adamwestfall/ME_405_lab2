@@ -1,0 +1,110 @@
+\hypertarget{namespacelab2__pc}{}\doxysection{lab2\+\_\+pc Namespace Reference}
+\label{namespacelab2__pc}\index{lab2\_pc@{lab2\_pc}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacelab2__pc_aa433314518565143d82b8b63621df84b}{plot\+Response}} (list results, gain, target\+\_\+pos, test\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Plots the response of the test results. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacelab2__pc_a4067bbc14727201a2e7d1a14f088c41b}{init\+Test}} (s, k, pos, test\+Num)
+\begin{DoxyCompactList}\small\item\em Initial test of the controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_a1dc8fc6ce4790e0b9cc9ba93844ccea5}\label{namespacelab2__pc_a1dc8fc6ce4790e0b9cc9ba93844ccea5}} 
+int {\bfseries BAUDRATE} = 115200
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_a6c1764208a3ca1e2e18c9e585909c44f}\label{namespacelab2__pc_a6c1764208a3ca1e2e18c9e585909c44f}} 
+int {\bfseries COMPORT} = 4
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_a422aa229f18d8804cf550eee6f6dfa59}\label{namespacelab2__pc_a422aa229f18d8804cf550eee6f6dfa59}} 
+{\bfseries end}
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_ab7099139b286fbd7b928a831a5bb9e8a}\label{namespacelab2__pc_ab7099139b286fbd7b928a831a5bb9e8a}} 
+serial\+Manager {\bfseries s} = \mbox{\hyperlink{classserial_manager_1_1_serial_manager}{serial\+Manager.\+Serial\+Manager}}(\textquotesingle{}COM\textquotesingle{} + str(COMPORT), BAUDRATE)
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_a561ea62b32e1e522c2903028e52d83b5}\label{namespacelab2__pc_a561ea62b32e1e522c2903028e52d83b5}} 
+{\bfseries try} \+:
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_adf6843a75b09121d0e055774f3026bcb}\label{namespacelab2__pc_adf6843a75b09121d0e055774f3026bcb}} 
+int {\bfseries k1} = 3
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_ae3ff597e6303173b813185d8900a1001}\label{namespacelab2__pc_ae3ff597e6303173b813185d8900a1001}} 
+int {\bfseries k2} = 100
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_ab10fa8929e09abcee40229e1f5b80d7f}\label{namespacelab2__pc_ab10fa8929e09abcee40229e1f5b80d7f}} 
+int {\bfseries k3} = 50
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_a5c0da38939bf7a775a540c2483eeb08d}\label{namespacelab2__pc_a5c0da38939bf7a775a540c2483eeb08d}} 
+int {\bfseries target\+\_\+pos} = 8000
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_aca35f403175003a921f20f408f2dd2da}\label{namespacelab2__pc_aca35f403175003a921f20f408f2dd2da}} 
+def {\bfseries out\+\_\+1} = \mbox{\hyperlink{namespacelab2__pc_a4067bbc14727201a2e7d1a14f088c41b}{init\+Test}}(s, k1, target\+\_\+pos, 1)
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_a7d94a85745c1eb35d5ea51f420b0f1eb}\label{namespacelab2__pc_a7d94a85745c1eb35d5ea51f420b0f1eb}} 
+def {\bfseries out\+\_\+2} = \mbox{\hyperlink{namespacelab2__pc_a4067bbc14727201a2e7d1a14f088c41b}{init\+Test}}(s, k2, target\+\_\+pos, 2)
+\item 
+\mbox{\Hypertarget{namespacelab2__pc_a59090ba1f62628eaabec4604f3b83185}\label{namespacelab2__pc_a59090ba1f62628eaabec4604f3b83185}} 
+def {\bfseries out\+\_\+3} = \mbox{\hyperlink{namespacelab2__pc_a4067bbc14727201a2e7d1a14f088c41b}{init\+Test}}(s, k3, target\+\_\+pos, 3)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}   @file                            lab2_pc.py
+   @brief                              Plots closed loop controller response.
+   @details                            Plots closed loop controller response. Utilizes the plotResponse and initTest functions.                                       
+   @author                             Jason Davis
+   @author                             Conor Fraser
+   @author                             Adam Westfall
+   @copyright                          Creative Commons CC BY: Please visit https://creativecommons.org/licenses/by/4.0/ to learn more
+   @date                               January 9, 2023
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacelab2__pc_a4067bbc14727201a2e7d1a14f088c41b}\label{namespacelab2__pc_a4067bbc14727201a2e7d1a14f088c41b}} 
+\index{lab2\_pc@{lab2\_pc}!initTest@{initTest}}
+\index{initTest@{initTest}!lab2\_pc@{lab2\_pc}}
+\doxysubsubsection{\texorpdfstring{initTest()}{initTest()}}
+{\footnotesize\ttfamily def lab2\+\_\+pc.\+init\+Test (\begin{DoxyParamCaption}\item[{}]{s,  }\item[{}]{k,  }\item[{}]{pos,  }\item[{}]{test\+Num }\end{DoxyParamCaption})}
+
+
+
+Initial test of the controller. 
+
+Conducts the initial controller test. 
+\begin{DoxyParams}{Parameters}
+{\em s} & Parses in the serial manager object. \\
+\hline
+{\em k} & Parses in the Kp for testing. ~\newline
+ \\
+\hline
+{\em pos} & Parses in the target motor position. \\
+\hline
+{\em test\+Num} & Parses in which test is running. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the results of the test. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelab2__pc_aa433314518565143d82b8b63621df84b}\label{namespacelab2__pc_aa433314518565143d82b8b63621df84b}} 
+\index{lab2\_pc@{lab2\_pc}!plotResponse@{plotResponse}}
+\index{plotResponse@{plotResponse}!lab2\_pc@{lab2\_pc}}
+\doxysubsubsection{\texorpdfstring{plotResponse()}{plotResponse()}}
+{\footnotesize\ttfamily def lab2\+\_\+pc.\+plot\+Response (\begin{DoxyParamCaption}\item[{list}]{results,  }\item[{}]{gain,  }\item[{}]{target\+\_\+pos,  }\item[{}]{test\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Plots the response of the test results. 
+
+Plots the response of the test results. Sets x and y axis labels. Sets the title of the plot. The x and y data start as empty lists and get appended as data is collected. 
+\begin{DoxyParams}{Parameters}
+{\em list} & Parses in a list of parameters to hit the low Kp, high Kp, and best performance targets. \\
+\hline
+{\em gain} & Parses in the Kp. ~\newline
+ \\
+\hline
+{\em target\+\_\+pos} & Parses in the target motor position. \\
+\hline
+{\em test\+\_\+num} & Parses in which test is running. \\
+\hline
+\end{DoxyParams}

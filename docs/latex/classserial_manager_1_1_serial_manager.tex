@@ -1,0 +1,120 @@
+\hypertarget{classserial_manager_1_1_serial_manager}{}\doxysection{serial\+Manager.\+Serial\+Manager Class Reference}
+\label{classserial_manager_1_1_serial_manager}\index{serialManager.SerialManager@{serialManager.SerialManager}}
+
+
+Serial Manager class.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classserial_manager_1_1_serial_manager_a6557b72028acedc547cac9e6185cfb5e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, COMPORT, BAUDRATE)
+\begin{DoxyCompactList}\small\item\em Initializes the serial port with comport and baudrate values. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classserial_manager_1_1_serial_manager_a847d2c2523f4ef904be27f1dd358a5eb}{get\+Comport}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the COMPORT value. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classserial_manager_1_1_serial_manager_a09ee5035ce58a3212f593212a37889fc}{get\+Baudrate}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the BAUDRATE value. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classserial_manager_1_1_serial_manager_a57693150f553e2b8a1542c5c954207e4}{write\+To\+VCP}} (self, line)
+\begin{DoxyCompactList}\small\item\em Writes serial data to the VCP. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classserial_manager_1_1_serial_manager_a339df7ef4b215f80cf88b0c5a94fa3b4}{read\+From\+VCP}} (self)
+\begin{DoxyCompactList}\small\item\em Reads serial data from the VCP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classserial_manager_1_1_serial_manager_ac7ba4f21bf9b7d6d01c176ef7025b147}\label{classserial_manager_1_1_serial_manager_ac7ba4f21bf9b7d6d01c176ef7025b147}} 
+{\bfseries COMPORT}
+\item 
+\mbox{\Hypertarget{classserial_manager_1_1_serial_manager_ac779ae9f24065aba2320cf559c36df33}\label{classserial_manager_1_1_serial_manager_ac779ae9f24065aba2320cf559c36df33}} 
+{\bfseries BAUDRATE}
+\item 
+\mbox{\Hypertarget{classserial_manager_1_1_serial_manager_a167910d93af398b2a7e1ba1c6ed69166}\label{classserial_manager_1_1_serial_manager_a167910d93af398b2a7e1ba1c6ed69166}} 
+{\bfseries serial\+\_\+port}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serial Manager class. 
+
+Contains init, get\+Comport, get\+Baudrate, write\+To\+VCP, and read\+From\+VCP functions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classserial_manager_1_1_serial_manager_a6557b72028acedc547cac9e6185cfb5e}\label{classserial_manager_1_1_serial_manager_a6557b72028acedc547cac9e6185cfb5e}} 
+\index{serialManager.SerialManager@{serialManager.SerialManager}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!serialManager.SerialManager@{serialManager.SerialManager}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def serial\+Manager.\+Serial\+Manager.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{COMPORT,  }\item[{}]{BAUDRATE }\end{DoxyParamCaption})}
+
+
+
+Initializes the serial port with comport and baudrate values. 
+
+Initializes the serial port with comport and baudrate values that are parsed in as parameters. 
+\begin{DoxyParams}{Parameters}
+{\em COMPORT} & Parses in the COMPORT for the serial port. \\
+\hline
+{\em BAUDRATE} & Parses in the BAUDRATE for the serial port. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classserial_manager_1_1_serial_manager_a09ee5035ce58a3212f593212a37889fc}\label{classserial_manager_1_1_serial_manager_a09ee5035ce58a3212f593212a37889fc}} 
+\index{serialManager.SerialManager@{serialManager.SerialManager}!getBaudrate@{getBaudrate}}
+\index{getBaudrate@{getBaudrate}!serialManager.SerialManager@{serialManager.SerialManager}}
+\doxysubsubsection{\texorpdfstring{getBaudrate()}{getBaudrate()}}
+{\footnotesize\ttfamily def serial\+Manager.\+Serial\+Manager.\+get\+Baudrate (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns the BAUDRATE value. 
+
+Returns the BAUDRATE value. \begin{DoxyReturn}{Returns}
+Returns the BAUDRATE value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserial_manager_1_1_serial_manager_a847d2c2523f4ef904be27f1dd358a5eb}\label{classserial_manager_1_1_serial_manager_a847d2c2523f4ef904be27f1dd358a5eb}} 
+\index{serialManager.SerialManager@{serialManager.SerialManager}!getComport@{getComport}}
+\index{getComport@{getComport}!serialManager.SerialManager@{serialManager.SerialManager}}
+\doxysubsubsection{\texorpdfstring{getComport()}{getComport()}}
+{\footnotesize\ttfamily def serial\+Manager.\+Serial\+Manager.\+get\+Comport (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns the COMPORT value. 
+
+Returns the COMPORT value. \begin{DoxyReturn}{Returns}
+Returns the COMPORT value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserial_manager_1_1_serial_manager_a339df7ef4b215f80cf88b0c5a94fa3b4}\label{classserial_manager_1_1_serial_manager_a339df7ef4b215f80cf88b0c5a94fa3b4}} 
+\index{serialManager.SerialManager@{serialManager.SerialManager}!readFromVCP@{readFromVCP}}
+\index{readFromVCP@{readFromVCP}!serialManager.SerialManager@{serialManager.SerialManager}}
+\doxysubsubsection{\texorpdfstring{readFromVCP()}{readFromVCP()}}
+{\footnotesize\ttfamily def serial\+Manager.\+Serial\+Manager.\+read\+From\+VCP (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Reads serial data from the VCP. 
+
+Utilizes the \char`\"{}with\char`\"{} and \char`\"{}as\char`\"{} commands to interact with the serial port. Decodes the data coming form the VCP. \begin{DoxyReturn}{Returns}
+Returns the com\+Output as a list filled with decoded line data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classserial_manager_1_1_serial_manager_a57693150f553e2b8a1542c5c954207e4}\label{classserial_manager_1_1_serial_manager_a57693150f553e2b8a1542c5c954207e4}} 
+\index{serialManager.SerialManager@{serialManager.SerialManager}!writeToVCP@{writeToVCP}}
+\index{writeToVCP@{writeToVCP}!serialManager.SerialManager@{serialManager.SerialManager}}
+\doxysubsubsection{\texorpdfstring{writeToVCP()}{writeToVCP()}}
+{\footnotesize\ttfamily def serial\+Manager.\+Serial\+Manager.\+write\+To\+VCP (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{line }\end{DoxyParamCaption})}
+
+
+
+Writes serial data to the VCP. 
+
+Utilizes the \char`\"{}with\char`\"{} and \char`\"{}as\char`\"{} commands to interact with the serial port. Encodes data to be sent by serial communication. 
+\begin{DoxyParams}{Parameters}
+{\em line} & Parses in a line of data to encode. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/conor/\+One\+Drive/\+Desktop/\+ME 405 Mechatronics 2/\+Github Local Repository/\+ME\+\_\+405\+\_\+lab2/src/serial\+Manager.\+py\end{DoxyCompactItemize}

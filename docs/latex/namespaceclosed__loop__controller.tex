@@ -1,0 +1,66 @@
+\hypertarget{namespaceclosed__loop__controller}{}\doxysection{closed\+\_\+loop\+\_\+controller Namespace Reference}
+\label{namespaceclosed__loop__controller}\index{closed\_loop\_controller@{closed\_loop\_controller}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classclosed__loop__controller_1_1_closed__loop__controller}{Closed\+\_\+loop\+\_\+controller}}
+\begin{DoxyCompactList}\small\item\em Closed loop controller class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_a46144e96bddbbc80c6d983814bc07da0}\label{namespaceclosed__loop__controller_a46144e96bddbbc80c6d983814bc07da0}} 
+pyb {\bfseries enable1} = pyb.\+Pin(pyb.\+Pin.\+cpu.\+A10, pyb.\+Pin.\+OUT\+\_\+\+PP)
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_afdffaac508a1900ccf321a5b2458ea86}\label{namespaceclosed__loop__controller_afdffaac508a1900ccf321a5b2458ea86}} 
+pyb {\bfseries input1} = pyb.\+Pin.\+cpu.\+B4
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_a815cb1e146db005077f4486f7247c940}\label{namespaceclosed__loop__controller_a815cb1e146db005077f4486f7247c940}} 
+pyb {\bfseries input2} = pyb.\+Pin.\+cpu.\+B5
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_afd89334a3feba367351d7ed447e76bf1}\label{namespaceclosed__loop__controller_afd89334a3feba367351d7ed447e76bf1}} 
+pyb {\bfseries timer1} = pyb.\+Timer(3, freq = 20000)
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_a8dc7fa8022236e3a364d6c1f41292d48}\label{namespaceclosed__loop__controller_a8dc7fa8022236e3a364d6c1f41292d48}} 
+motor\+\_\+driver {\bfseries m1\+\_\+driver} = \mbox{\hyperlink{classmotor__driver_1_1_motor_driver}{motor\+\_\+driver.\+Motor\+Driver}}(enable1, input1, input2, timer1)
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_abc693e13108533d4a28b69308a3b3449}\label{namespaceclosed__loop__controller_abc693e13108533d4a28b69308a3b3449}} 
+motor\+\_\+driver {\bfseries m1} = m1\+\_\+driver.\+motor(input1, input2, 1, 2, \char`\"{}MOTOR A\char`\"{})
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_ad3befbebff2ee934a00b0bd1db4db45a}\label{namespaceclosed__loop__controller_ad3befbebff2ee934a00b0bd1db4db45a}} 
+encoder {\bfseries encoder\+\_\+A} = \mbox{\hyperlink{classencoder_1_1_encoder}{encoder.\+Encoder}}(pyb.\+Pin.\+cpu.\+B6, pyb.\+Pin.\+cpu.\+B7, 4, ID=\char`\"{}ENCODER A\char`\"{})
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_a7b8120b6c92f5b6460facbcb68077933}\label{namespaceclosed__loop__controller_a7b8120b6c92f5b6460facbcb68077933}} 
+\mbox{\hyperlink{classclosed__loop__controller_1_1_closed__loop__controller}{Closed\+\_\+loop\+\_\+controller}} {\bfseries controller} = \mbox{\hyperlink{classclosed__loop__controller_1_1_closed__loop__controller}{Closed\+\_\+loop\+\_\+controller}}()
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_a1330a97c6b73d77a81cb04475b6a8411}\label{namespaceclosed__loop__controller_a1330a97c6b73d77a81cb04475b6a8411}} 
+{\bfseries try} \+:
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_a9dbc808f0ef6dfabd0e6cdade1a1c384}\label{namespaceclosed__loop__controller_a9dbc808f0ef6dfabd0e6cdade1a1c384}} 
+list {\bfseries time} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_a3badd121e8a3e95a4cf436a803be4a22}\label{namespaceclosed__loop__controller_a3badd121e8a3e95a4cf436a803be4a22}} 
+list {\bfseries position} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_ae2060ec274eefce2ca1cc045761652e6}\label{namespaceclosed__loop__controller_ae2060ec274eefce2ca1cc045761652e6}} 
+utime {\bfseries t\+\_\+end} = utime.\+time() + 2
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_ad058b4b1f09225df7d7ddce4ac64ab63}\label{namespaceclosed__loop__controller_ad058b4b1f09225df7d7ddce4ac64ab63}} 
+encoder {\bfseries current\+\_\+pos} = encoder\+\_\+\+A.\+read()
+\item 
+\mbox{\Hypertarget{namespaceclosed__loop__controller_a97167ba8008a2db0ccaa68641619420d}\label{namespaceclosed__loop__controller_a97167ba8008a2db0ccaa68641619420d}} 
+control\+\_\+loop {\bfseries pwm} = control\+\_\+loop.\+run(current\+\_\+pos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}   @file                            closed_loop_controller.py
+   @brief                              Proportional closed loop controller that can be applied to mechanical systems.
+   @details                            Contains a Closed_loop_controller class that includes init, run, set_setpoint, and set_kp functions. 
+                                       The user will input a prefered Kp value to set the controller gain.                                    
+   @author                             Jason Davis
+   @author                             Conor Fraser
+   @author                             Adam Westfall
+   @copyright                          Creative Commons CC BY: Please visit https://creativecommons.org/licenses/by/4.0/ to learn more
+   @date                               January 9, 2023
+\end{DoxyVerb}
+ 
