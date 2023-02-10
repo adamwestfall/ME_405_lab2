@@ -1,39 +1,58 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jan 31 08:32:30 2023
-
-@author: conor
-"""
+'''   @file                            closed_loop_controller.py
+   @brief                              Proportional closed loop controller that can be applied to mechanical systems.
+   @details                            Contains a Closed_loop_controller class that includes init, run, set_setpoint, and set_kp functions. 
+                                       The user will input a prefered Kp value to set the controller gain.                                    
+   @author                             Jason Davis
+   @author                             Conor Fraser
+   @author                             Adam Westfall
+   @copyright                          Creative Commons CC BY: Please visit https://creativecommons.org/licenses/by/4.0/ to learn more
+   @date                               January 9, 2023
+'''
 
 #imports
 import utime, encoder, motor_driver, pyb
 
-class closed_loop_control:
+class Closed_loop_controller:
+    '''!  @brief                              Closed loop controller class.
+       @details                               Contains init, run, set_setpoint, and set_kp functions. 
+    '''
     
-    def __init__ (self, Kp, setpoint):
+    def __init__ (self):
+        '''!  @brief                              Initializes the closed loop controller object.
+           @details                               Kp and setpoint self variables are established. 
+        '''
         
-        self.Kp = Kp
-        self.setpoint = setpoint
+        self.kp = 0
+        self.setpoint = 0
         
         
     def run(self, current_pos):
+        '''!  @brief                              Runs the proportional closed loop controller.
+           @details                               Proportional controller that returns the necessary motor duty cycle.
+           @return                                Returns the duty cycle needed by the motor.
+        '''
         
         # duty cycle or torque = Kp * (position_want - position_current)
-        duty_cycle = self.Kp * (self.setpoint - current_pos)
-        
+        duty_cycle = -1 * self.kp * (self.setpoint - current_pos)
         return duty_cycle
                     
     def set_setpoint(self, setpoint):
+        '''!  @brief                              Sets the setpoint for the closed loop controller.
+           @details                               Sets the setpoint for the closed loop controller.
+        '''
         
         self.setpoint = setpoint
                     
-    def set_Kp(self, Kp):    
+    def set_kp(self, kp):
+        '''!  @brief                              Sets the Kp for the closed loop controller.
+           @details                               Sets the Kp for the closed loop controller.
+        '''
             
-        self.Kp = Kp
+        self.kp = kp
  
  
 if __name__ == '__main__':
-    
+
     #enable any motor and encoder pins, probaby imported    
     enable1 = pyb.Pin(pyb.Pin.cpu.A10, pyb.Pin.OUT_PP)
     input1 = pyb.Pin.cpu.B4
@@ -56,23 +75,14 @@ if __name__ == '__main__':
     # zero encoder
     encoder_A.zero()
     
-    #Something to set Kp and initial setpoint
-    init_Kp = 0
-    init_setpoint = 0
-    
-    control_loop = closed_loop_control(init_Kp, init_setpoint)
+    controller = Closed_loop_controller()
     
     #While loop to continously run the controller
     try:
         while True:
             
-            encoder_A.zero()
-            Kp = float(input('Set Kp value:'))
-            setpoint = int(input('Set setpoint value:'))
-            
-            control_loop.set_Kp(Kp)
-            
-            control_loop.set_setpoint(setpoint)
+            controller.set_Kp()
+            controller.set_setpoint(setpoint)
             
             time = []     
             position = []

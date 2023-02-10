@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
+
 ''' @file                       encoder.py
     @brief                      A hardware driver for reading from quadrature encoders
-    @details                    Includes an Encoder class that contains an init, update, zero, read, set_position, get_delta, and get_encoder_ID.
-                                The init function instantiates the necessary pins, timers, and useful encoder values for the quadrature encoders.
+    @details
     @author                     Jason Davis
     @author                     Conor Fraser
     @author                     Adam Westfall
@@ -12,17 +13,13 @@ import pyb
 import time
 
 class Encoder():
-    '''     @brief                  Interface with quadrature encoders.
-        @details                Includes the init, update, zero, read, set_position, get_delta, and get_encoder_ID functions.
+    ''' @brief                  Interface with quadrature encoders
+        @details
     '''
     
     def __init__(self, pinA, pinB, timNum, ID = None):
-        '''     @brief              Interface with quadrature encoders.
-            @details            Initialize the encoder hardware with two GPIO pins, a timer, and an optional ID.
-            @param pinA         Initialize pinA for the encoder.
-            @param pinB         Initialize pinB for the encoder.  
-            @param timNum       Initalize a timer for use by the encoder.
-            @param ID           Used to set an ID to the encoder.
+        ''' @brief              Interface with quadrature encoders
+            @details            Initialize the encoder hardware with two GPIO pins, a timer, and an optional ID
         '''
         self.pinA = pinA
         self.pinB = pinB
@@ -36,7 +33,7 @@ class Encoder():
         self.ID = ID if ID is not None else None
         
         # each pair of pins gets a timer
-        self.encoderTimer = pyb.Timer(timNum, prescaler = 0, period = 65535)
+        self.encoderTimer = pyb.Timer(timNum, prescaler = 0, period = self.period-1)
         
         # each pin gets a channel
         self.encoderTimer.channel(1, pyb.Timer.ENC_AB, pin = pinA)
@@ -45,9 +42,8 @@ class Encoder():
         self.prev_count = self.encoderTimer.counter()
         
     def update(self):
-        '''     @brief              Updates encoder position and angular velocity.
-            @details            Utilizes the period of the encoder, the delta between the last read value 
-                                and count of the encoder to handle overflow and underflow errors.
+        ''' @brief              Updates encoder position and angular velocity
+            @details
         '''
         current_count = self.encoderTimer.counter()
         self.delta = current_count - self.prev_count
@@ -62,37 +58,38 @@ class Encoder():
         self.position += self.delta
         
     def zero(self):
-        '''     @brief              Resets encoder position to zero.
-            @details                Resets encoder position to zero.
+        ''' @brief              Resets encoder position to zero
+            @details
         '''
         self.position = 0
         
     def read(self):
-        '''     @brief              Returns encoder position.
-            @details                Returns encoder position.
-            @return             The position of the encoder shaft.
+        ''' @brief              Returns encoder position
+            @details
+            @return             The position of the encoder shaft
         '''
         return self.position
     
     
     def set_position(self, position):
-        '''     @brief              Updates encoder position.
-            @details                Updates encoder position.
-            @param  position       The new position of the encoder shaft. 
+        ''' @brief              Updates encoder position
+            @details
+            @param  position    The new position of the encoder shaft 
         '''
         self.position = position
         
     def get_delta(self):
-        '''     @brief              Returns encoder shaft angular velocity.
-            @details                Returns encoder shaft angular velocity.
-            @return                 The change in position of the encoder shaft between the most two recent updates.
+        ''' @brief              Returns encoder shaft angular velocity
+            @details
+            @return             The change in position of the encoder shaft
+                                between the most two recent updates
         '''
         return self.delta
         
     def get_encoder_ID(self):
-        '''     @brief              Returns encoder ID.
-            @details                Returns encoder ID.
-            @return                 An ID tag of string type.
+        ''' @brief              Returns encoder ID
+            @details
+            @return             An ID tag of string type
         '''
         return self.ID
         
@@ -108,7 +105,7 @@ if __name__ == '__main__':
         try:
             encoderA.update()
             print(encoderA.read())
-            time.sleep(0.5)
+            # time.sleep(0.5)
         except KeyboardInterrupt:
             print("bye bye")
             break
