@@ -16,9 +16,13 @@
 import pyb, time
 
 class MotorDriver:
+    '''!  @brief                              Motor Driver class.
+       @details                               Contains init, enable, disable, fault_cb, getEnableState, and motor functions.
+                                              Used to set up motor objects.
+    '''
     
     def __init__(self, en_pin, in1pin, in2pin, timer): 
-        '''   @brief                           Constructor for L6206 motor driver hardware
+        '''!  @brief                           Constructor for L6206 motor driver hardware
            @details                            Constructor for L6206 motor driver hardware   
            @param en_pin                       Encoder Pin
            @param in1pin                       Motor Pin 1
@@ -37,14 +41,14 @@ class MotorDriver:
         self.timer = timer
         
     def enable (self):
-        '''   @brief                           Enable the motors to spin
+        '''!  @brief                           Enable the motors to spin
            @details                            Allows the motors to spin by writing the en_pin
                                                to logic high
         '''
         self.en_pin.high()
     
     def disable (self):
-        '''   @brief                           Disables motor function
+        '''!  @brief                           Disables motor function
            @details                            Keeps the motors from spinning by writing the en_pin
                                                to logic low
         '''
@@ -65,7 +69,7 @@ class MotorDriver:
 # =============================================================================
 
     def fault_cb (self, IRQ_src):
-        '''   @brief                           Detects a hardware fault condition
+        '''!  @brief                           Detects a hardware fault condition
            @details                            Detects a hardware fault condition and interrupts harware function
                                                by disabling motor function
            @param IRQ_src                      The source of the interrupt causing a motor fault
@@ -74,7 +78,7 @@ class MotorDriver:
         self.disable()
         
     def getEnableState(self):
-        '''   @brief                           Returns state of the motor.
+        '''!  @brief                           Returns state of the motor.
            @details                            Reads the enable pin.
            @return                             Returns state of the motor.
         '''
@@ -119,7 +123,7 @@ class MotorDriver:
     #         # print("{0} is stationary\n".format(self.motorID))
                     
     def motor (self, inputA, inputB, channelA, channelB, motorID):
-        '''   @brief                           Constructor for Motor function
+        '''!  @brief                           Constructor for Motor function
            @details                            Constructor for Motor function
            @param inputA                       Input pin 1 of 2
            @param inputB                       Input pin 2 of 2
@@ -132,9 +136,14 @@ class MotorDriver:
         return Motor(inputA, inputB, self.timer, channelA, channelB, motorID)
     
 class Motor:
+    '''!  @brief                              Motor class.
+       @details                               Contains init, getMotorID, getDuty, set_duty, getEnableState, getDirection, 
+                                              getRunState, toggleRunState, coast, and brake functions. 
+                                              Used to interact with the motor objects.
+    '''
         
     def __init__ (self, inputA, inputB, motorTimer, channelA, channelB, motorID):
-        '''   @brief                           Constructor for Motor class
+        '''!  @brief                           Constructor for Motor class
            @details                            Constructor for Motor class
            @param inputA                       Input pin 1 of 2
            @param inputB                       Input pin 2 of 2
@@ -162,21 +171,21 @@ class Motor:
         self.direction = 0
         
     def getMotorID(self):
-        '''   @brief                           Returns Motor ID
+        '''!  @brief                           Returns Motor ID
            @details                            Returns Motor ID
            @return                             Returns Motor ID        
         '''
         return self.motorID
     
     def getDuty(self):
-        '''   @brief                           Returns Motor Duty Cycle.
+        '''!  @brief                           Returns Motor Duty Cycle.
            @details                            Returns Motor Duty Cycle.
            @return                             Returns Motor Duty Cycle.       
         '''
         return self.duty
     
     def set_duty(self, duty):
-        '''   @brief                           Sets Motor Duty Cycle.
+        '''!  @brief                           Sets Motor Duty Cycle.
            @details                            Includes a set of if and elif blocks to establish the direction of the motor 
                                                as well as setting the duty cycle of the motor.
            @param duty                         Duty cycle parsed in from user input.
@@ -204,34 +213,34 @@ class Motor:
             # print("{0} is stationary\n".format(self.motorID))
 
     def getDirection(self):
-        '''   @brief                           Returns spinning motor direction.
+        '''!  @brief                           Returns spinning motor direction.
            @details                            Returns spinning motor direction.
            @return                             Returns spinning motor direction.       
         '''
         return self.direction
     
     def getRunState(self):
-        '''   @brief                           Returns motor run state.
+        '''!  @brief                           Returns motor run state.
            @details                            Returns motor run state.
            @return                             Returns motor run state.      
         '''
         return self.isRunning
     
     def toggleRunState(self):
-        '''   @brief                           Toggles motor run state.
+        '''!  @brief                           Toggles motor run state.
            @details                            Inverses motor run state.
         '''
         self.isRunning = not(self.isRunning)  
         
     def coast(self):
-        '''   @brief                           Sets motor duty cycle to zero.
+        '''!  @brief                           Sets motor duty cycle to zero.
            @details                            Both motor channels have duty cycles set to zero.
         '''
         self.channel1.pulse_width_percent(0)
         self.channel2.pulse_width_percent(0)
     
     def brake(self):
-        '''   @brief                           Applies 100% duty cycle to the motors.
+        '''!  @brief                           Applies 100% duty cycle to the motors.
            @details                            Both motor channels have duty cycles set to 100% to brake the motors quickly.
         '''
         self.channel1.pulse_width_percent(100)

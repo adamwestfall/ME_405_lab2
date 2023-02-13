@@ -12,12 +12,12 @@ import pyb
 import time
 
 class Encoder():
-    '''     @brief                  Interface with quadrature encoders.
+    '''!    @brief                  Interface with quadrature encoders.
         @details                Includes the init, update, zero, read, set_position, get_delta, and get_encoder_ID functions.
     '''
     
     def __init__(self, pinA, pinB, timNum, ID = None):
-        '''     @brief              Interface with quadrature encoders.
+        '''!    @brief              Interface with quadrature encoders.
             @details            Initialize the encoder hardware with two GPIO pins, a timer, and an optional ID.
             @param pinA         Initialize pinA for the encoder.
             @param pinB         Initialize pinB for the encoder.  
@@ -45,7 +45,7 @@ class Encoder():
         self.prev_count = self.encoderTimer.counter()
         
     def update(self):
-        '''     @brief              Updates encoder position and angular velocity.
+        '''!    @brief              Updates encoder position and angular velocity.
             @details            Utilizes the period of the encoder, the delta between the last read value 
                                 and count of the encoder to handle overflow and underflow errors.
         '''
@@ -62,13 +62,13 @@ class Encoder():
         self.position += self.delta
         
     def zero(self):
-        '''     @brief              Resets encoder position to zero.
+        '''!    @brief              Resets encoder position to zero.
             @details                Resets encoder position to zero.
         '''
         self.position = 0
         
     def read(self):
-        '''     @brief              Returns encoder position.
+        '''!    @brief              Returns encoder position.
             @details                Returns encoder position.
             @return             The position of the encoder shaft.
         '''
@@ -76,21 +76,21 @@ class Encoder():
     
     
     def set_position(self, position):
-        '''     @brief              Updates encoder position.
+        '''!    @brief              Updates encoder position.
             @details                Updates encoder position.
             @param  position       The new position of the encoder shaft. 
         '''
         self.position = position
         
     def get_delta(self):
-        '''     @brief              Returns encoder shaft angular velocity.
+        '''!    @brief              Returns encoder shaft angular velocity.
             @details                Returns encoder shaft angular velocity.
             @return                 The change in position of the encoder shaft between the most two recent updates.
         '''
         return self.delta
         
     def get_encoder_ID(self):
-        '''     @brief              Returns encoder ID.
+        '''!    @brief              Returns encoder ID.
             @details                Returns encoder ID.
             @return                 An ID tag of string type.
         '''
